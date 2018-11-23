@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://www.w3schools.com/w3css/4/w3.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body,h1,h2,h3,h5,h6 {
+    font-family: "Lato", sans-serif
+}
+
+.w3-bar,h1, h2,button,h4 {
+    font-family: "Montserrat", sans-serif
+}
+
+.fa {
+    font-size:50px;
+}
+
+.fa-bars, .fa-home, .fa-eye, .fa-angle-right {
+    font-size:inherit
+}
+
+.mb {
+    min-width:320px; 
+    width: 20%;
+    height: 60px;
+    font-size: 23px;
+}
+
+/* header - блок с поиском услуг */
+.page-header {
+    width: 100%;
+    height: 284px;
+}
+
+/* Поисковая строка в header */
+.header-search {
+    margin-top: 140px
+}
+
+/* Форма ввода строки для поиска услуги */
+.search_input {
+    width: 1150px
+}
+
+/* Фильтрация: строка с выпадающими списками */
+.row_filter {
+    padding: 4px 0
+}
+
+/* Фильтрация - выпадающие списки */
+.filter_button {
+    height: 50px 
+}
+
+/* Строки с карточками форм услуг */
+.forms_row{
+    margin-bottom:128px
+}
+
+/* Карточка с формой услуги */
+.forms_card {
+    width: 95%
+}
+
+/* Кнопка "Ещё" на карточке формы услуги */
+.button_more {
+    margin-bottom: 8px
+}
+
+/* Логотип организации в полезных ссылках  */
+.useful_link_img {
+    height:80px
+}
+
+/* Метка, содержащая количество отмеченных позиций */
+/* фильтра "категория получателя" */
+.filter_badge {
+    font-size: 13px;
+    height: 21px;
+    width: 24px;
+    visibility: hidden;
+}
+
+#overlay {
+    position: fixed; /*Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.overlay_card {
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    width: 65%;
+    overflow: hidden;
+}
+
+
+.overlay_header {
+    height: 64px;
+    font-size: 18px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    width: 100%;
+}
+
+.overlay_header_icon {
+    margin-right: 10px;
+}
+
+.overlay_name, .overlay_section_description {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.overlay_name {
+    padding-top: 40px;
+}
+
+.overlay_section_description {
+    margin-top: 16px; 
+}
+
+
+.overlay_name_icon {
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-left: 8px;
+    font-family: "Montserrat", sans-serif
+}
+
+.overlay_app_button {
+    width: 90%;
+    height: 64px;
+    /* background-color: black; */
+    font-size: 18px;
+    color: white;
+    display: block;
+    margin: 0 auto;
+    margin-top: 32px;
+}
+
+.aside {
+    height: auto;
+    float: left;
+    width: 30%;
+}
+
+.aside_right {
+    float: right;
+    height: auto;
+    width: 69%;
+    height: 500px;
+}
+
+.overlay_h3 {
+    text-align: center;
+    padding-bottom: 16px;
+    font-family: "Montserrat", sans-serif
+}
+
+.noscroll { 
+    overflow: hidden;
+  }
+
+.desc_butt {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.butt-green {
+    height: 64px;
+    margin-bottom: 8px;
+    background-color: rgb(133, 216, 133);
+}
