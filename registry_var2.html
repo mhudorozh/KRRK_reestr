@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Информационно-аналитическая система «Поддержка предпринимательства» АО «Корпорация развития Республики Карелия»</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Подключение стилей для страницы из фала registry.css -->
+    <link rel="stylesheet" href="css/registry.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  </head>
+
+  <body>
+
+    <!-- Навигационная панель для полной версии-->
+
+    <nav class="w3-top">
+      <div class="w3-bar w3-amber w3-card w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-white w3-large" href="javascript:void(0);" onclick="myFunction()" title="Открыть меню сайта"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-red" title="Перейти на главную страницу"><i class="fa fa-home"></i></a>
+        <a href="http://82.196.66.9/registry" class="w3-bar-item w3-button w3-white w3-hide-small w3-padding-large w3-hover-white">Услуги</a>
+        <a href="http://82.196.66.9/infrastructure" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Организации</a>
+        <a href="http://82.196.66.9/analysis" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Аналитика</a>
+        <a href="http://82.196.66.9/about" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">О проекте</a>
+        <!-- Элементы навигационной панели, расположенные справа -->
+        <div class="w3-right">
+          <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-red" title="Поиск"><i class="w3-large fa fa-search"></i></a>
+          <a href="http://82.196.66.9/accessibility" class="w3-bar-item w3-button w3-right w3-padding-large w3-white w3-hide-small" title="Версия для слабовидящих"><i class="fa fa-eye"></i></a>
+        </div>
+      </div>
+
+      <!-- Навигационная панель для мобильного устройства -->
+      
+      <div id="navDemo" class="w3-bar-block w3-card w3-hide w3-red w3-hide-large w3-hide-medium w3-large">
+        <a href="http://82.196.66.9/registry" class="w3-bar-item w3-button w3-white w3-padding-large">Услуги</a>
+        <a href="http://82.196.66.9/infrastructure" class="w3-bar-item w3-button w3-padding-large">Организации</a>
+        <a href="http://82.196.66.9/analysis" class="w3-bar-item w3-button w3-padding-large">Аналитика</a>
+        <a href="http://82.196.66.9/about" class="w3-bar-item w3-button w3-padding-large">О проекте</a>
+        <a href="http://82.196.66.9/accessibility" class="w3-bar-item w3-button w3-padding-large">Для слабовидящих</a>
+      </div>
+    </nav>
+
+    <!-- Блок с поиском услуг -->
+
+    <header class="w3-amber w3-center w3-hide-small w3-container page-header">
+      <div class="w3-dispaly-container w3-block">
+        <div class="w3-display-topmiddle">
+        
+          <!-- Поисковая строка -->
+        
+          <div class="w3-row header-search" id="search_div">
+            <form class="w3-cell">  
+              <input class="w3-input w3-border-0 w3-padding-large search_input" placeholder="Найти..." type="text" onclick="show_description('filter_bl')">
+            </form>
+            <a href="#" class="w3-cell w3-button w3-hover-grey w3-red" title="Поиск"><i class="w3-large fa fa-search"></i></a>
+          </div>
+        
+          <!-- Блок, открывающий фильтрацию -->
+        
+          <div id="filter_bl" class="w3-hide">
+            <div class="w3-container w3-card-4" id="card">	
+              <div class="w3-row row_filter">	
+              
+                <!-- Выпадающий список "Форма поддержки" -->
+              
+                <div class="w3-dropdown-hover w3-cell w3-amber">
+                  <button class="w3-button w3-black filter_button" title="More">Форма поддержки <i class="w3-large fa fa-caret-down"></i></button>     
+                  <div class="w3-dropdown-content w3-bar-block w3-card-4" id="forma_div">
+                    <input class="w3-input w3-padding" type="text" placeholder="Search.." id="forma_input" onkeyup="filter_search('forma_div', 'forma_input')">
+                    <a href="#merchandise" class="w3-bar-item w3-button">Merchandise</a>
+                    <a href="#extras" class="w3-bar-item w3-button">Extras</a>
+                    <a href="#media" class="w3-bar-item w3-button">Media</a>
+                  </div>
+                </div>  
+          
+              <!-- Выпадающий список "Категория получателя" -->
+              
+                <div class="w3-dropdown-hover w3-cell w3-padding">
+                  <button class="w3-button w3-black filter_button" title="More"> Категория получателя <span class="w3-badge w3-green filter_badge" id="test">0</span> <i class="w3-large fa fa-caret-down"></i></button>     
+                  <div class="w3-dropdown-content w3-bar-block w3-card-4" id="category_div">
+                    <input class="w3-input w3-padding" type="text" placeholder="Search.." id="categoty_input" onkeyup="filter_search('category_div', 'categoty_input')">
+                    
+                    <a class="w3-bar-item w3-button"><input class="w3-check" type="checkbox" onchange='handleChange(this);' id="about"><label for="about">About</label></a>
+                    <a class="w3-bar-item w3-button"><input class="w3-check" type="checkbox" onchange='handleChange(this);' id="base"><label for="base">Base</label></a>
+                    <a class="w3-bar-item w3-button"><input class="w3-check" type="checkbox" onchange='handleChange(this);' id="blog"><label for="blog">Blog</label></a>
+                    <a class="w3-bar-item w3-button"><input class="w3-check" type="checkbox" onchange='handleChange(this);' id="contact"><label for="contact">Contact</label></a>
+                    <a class="w3-bar-item w3-button"><input class="w3-check" type="checkbox" onchange='handleChange(this);' id="support"><label for="support">Support</label></a>
+                    <a class="w3-bar-item w3-button"><input class="w3-check" type="checkbox" onchange='handleChange(this);' id="tools"><label for="tools">Tools</label></a>
+                </div>	
+                </div>
+
+              <!-- Выпадающий список "Вид деятельности" -->
+              
+              <div class="w3-dropdown-hover w3-cell">
+                <button class="w3-button w3-black filter_button" title="More">Вид деятельности <i class="w3-large fa fa-caret-down"></i></button>     
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                  <a href="#" class="w3-bar-item w3-button">Merchandise</a>
+                  <a href="#" class="w3-bar-item w3-button">Extras</a>
+                  <a href="#" class="w3-bar-item w3-button">Media</a>
+                </div>
+              </div>    
+
+          
+              <!-- Выпадающий список "Организационно-правовая форма" --> 
+              
+              <div class="w3-dropdown-hover w3-cell w3-padding w3-amber">
+                <button class="w3-button w3-black filter_button">Организационно-правовая форма <i class="w3-large fa fa-caret-down"></i></button>     
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                  <a href="#" class="w3-bar-item w3-button">Граждане</a>
+                  <a href="#" class="w3-bar-item w3-button">Юридические лица</a>
+                  <a href="#" class="w3-bar-item w3-button">Предприниматели</a>
+                </div>
+              </div>
+            
+              <!-- Выпадающий список "Тип субъекта" -->
+              
+              <div class="w3-dropdown-hover w3-cell">
+                <button class="w3-button w3-black filter_button" title="More">Тип субъекта <i class="w3-large fa fa-caret-down"></i></button>     
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                  <a href="#" class="w3-bar-item w3-button">Merchandise</a>
+                  <a href="#" class="w3-bar-item w3-button">Extras</a>
+                  <a href="#" class="w3-bar-item w3-button">Media</a>
+                </div>
+              </div>     
+            
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Поиск по категориям -->
+
+      <div class="w3-row-padding w3-light-grey w3-container">
+        <div class="w3-content w3-cell-row">
+          <h1 class="w3-padding-16">Поиск по формам </h1>	 
+          <div class="w3-row forms_row" id="myGrid">
+
+            <!-- Первый столбец -->
+            <div class="w3-third">
+        
+              <!-- Финансы -->
+        
+              <div class="w3-panel w3-card-2 forms_card">
+                <h3 class="w3-center w3-text-grey">Финансы</h3>
+                <p class="w3-center w3-padding-large"><i class="fa fa-calculator fa-fw w3-jumbo w3-text-teal"></i></p>
+                <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                  <li onclick="on()">Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                </ul>   
+                <!-- "Ещё" -->
+                <button onclick="show_description('fin')" class="w3-button w3-block w3-sand w3-center button_more">Ещё...</button>
+                <div id="fin" class="w3-hide">
+                  <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                    <li>Jill</li>
+                    <li>Eve</li>
+                    <li>Adam</li>
+                  </ul>  
+                </div>
+              </div> 
+          
+          <!-- Консультации -->  
+            
+              <div class="w3-panel w3-card-2 forms_card">
+                <h3 class="w3-center w3-text-grey">Консультации</h3>
+                <p class="w3-center w3-padding-large"><i class="fa fa-info-circle fa-fw w3-jumbo w3-text-teal"></i></p>
+                <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                </ul>  
+                <!-- "Ещё" -->
+                <button onclick="show_description('cons')" class="w3-button w3-block w3-sand w3-center button_more">Ещё...</button>
+                <div id="cons" class="w3-hide">
+                  <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                    <li>Jill</li>
+                    <li>Eve</li>
+                    <li>Adam</li>
+                  </ul>  
+                </div>  
+              </div>
+      
+          <!-- Категория экспорт-->     
+            
+              <div class="w3-panel w3-card-2 forms_card">
+                <h3 class="w3-center w3-text-grey">Экспорт</h3>
+                <p class="w3-center w3-padding-large"><i class="fa fa-arrow-circle-right fa-fw w3-jumbo w3-text-teal"></i></p>
+                <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                </ul> 
+                <!-- "Ещё" -->
+                <button onclick="show_description('export')" class="w3-button w3-block w3-sand w3-center button_more">Ещё...</button>
+                <div id="export" class="w3-hide">
+                  <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                    <li>Jill</li>
+                    <li>Eve</li>
+                    <li>Adam</li>
+                  </ul>  
+                </div>
+              </div>
+            </div>  
+
+            <!-- Второй столбец -->	 
+
+            <div class="w3-third">
+
+              <!-- Категория "Имущественная" --> 
+                
+              <div class="w3-panel w3-card-2 forms_card">
+                <h3 class="w3-center w3-text-grey">Имущество</h3>
+                <p class="w3-center w3-padding-large"><i class="fa fa-building fa-fw w3-jumbo w3-text-teal"></i></p>
+                <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                </ul>
+                <!-- "Ещё" -->
+                <button onclick="show_description('imusch')" class="w3-button w3-block w3-sand w3-center button_more">Ещё...</button>
+                <div id="imusch" class="w3-hide">
+                  <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                    <li>Jill</li>
+                    <li>Eve</li>
+                    <li>Adam</li>
+                  </ul>  
+                </div>
+              </div> 
+          
+              <!-- Категория "Обучение" -->  
+                    
+              <div class="w3-panel w3-card-2 forms_card">
+                <h3 class="w3-center w3-text-grey">Обучение</h3>
+                <p class="w3-center w3-padding-large"><i class="fa fa-book fa-fw w3-jumbo w3-text-teal"></i></p>
+                <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                </ul> 
+                <!-- "Ещё" -->
+                <button onclick="show_description('obuch')" class="w3-button w3-block w3-sand w3-center button_more">Ещё...</button>
+                <div id="obuch" class="w3-hide">
+                  <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                    <li>Jill</li>
+                    <li>Eve</li>
+                    <li>Adam</li>
+                  </ul>  
+                </div>  
+              </div> 
+          
+              <!-- Категория "Сельское хозяйство" -->
+          
+              <div class="w3-panel w3-card-2 forms_card">
+                <h3 class="w3-center w3-text-grey">Сельское хозяйство</h3>
+                <p class="w3-center w3-padding-large"><i class="fa fa-leaf fa-fw w3-jumbo w3-text-teal"></i></p>
+                <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                </ul>
+                <!-- "Ещё" -->
+                <button onclick="show_description('sh')" class="w3-button w3-block w3-sand w3-center button_more">Ещё...</button>
+                <div id="sh" class="w3-hide">
+                  <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                    <li>Jill</li>
+                    <li>Eve</li>
+                    <li>Adam</li>
+                  </ul>  
+                </div>
+              </div>
+            </div>
+
+            <!-- Третий столбец -->
+
+            <div class="w3-third">
+        
+              <!-- Категория "Информационная"-->
+          
+              <div class="w3-panel w3-card-2 forms_card">
+                <h3 class="w3-center w3-text-grey">Информация</h3>
+                <p class="w3-center w3-padding-large"><i class="fa fa-laptop fa-fw w3-jumbo w3-text-teal"></i></p>
+                <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                </ul>
+                <!-- "Ещё" -->
+                <button onclick="show_description('info')" class="w3-button w3-block w3-sand w3-center button_more">Ещё...</button>
+                <div id="info" class="w3-hide">
+                  <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                    <li>Jill</li>
+                    <li>Eve</li>
+                    <li>Adam</li>
+                  </ul>  
+                </div>
+              </div> 
+          
+              <!-- Категория "Инновации" --> 
+          
+              <div class="w3-panel w3-card-2 forms_card">
+                <h3 class="w3-center w3-text-grey">Инновации</h3>
+                <p class="w3-center w3-padding-large"><i class="fa fa-lightbulb-o fa-fw w3-jumbo w3-text-teal"></i></p>
+                <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                </ul>
+                <!-- "Ещё" -->
+                <button onclick="show_description('inno')" class="w3-button w3-block w3-sand w3-center button_more">Ещё...</button>
+                <div id="inno" class="w3-hide">
+                  <ul class="w3-ul w3-padding-large w3-center w3-hoverable">
+                    <li>Jill</li>
+                    <li>Eve</li>
+                    <li>Adam</li>
+                  </ul>  
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="w3-container w3-row-padding w3-light-grey w3-center w3-opacity w3-hide-small w3-display-container">  
+
+      <div class="w3-content">
+        <h1 class="w3-padding-32">Полезные ссылки</h1>
+        <div class="w3-cell-row">
+
+          <a href="http://cpp10.ru/" class="w3-button w3-third">
+            <img src="img/logo2.png" alt="sdf" class="useful_link_img">
+            <p class="w3-text-dark-grey">ЦЕНТР ПОДДЕРЖКИ<br>ПРЕДПРИНИМАТЕЛЬСТВА<br>РЕСПУБЛИКИ КАРЕЛИЯ</p>
+          </a>
+
+          <a href="http://kr-rk.ru/" class="w3-button w3-third">
+            <img src="img/logo.png" alt="sdf" class="useful_link_img">
+            <p class="w3-text-dark-grey">КОРПОРАЦИЯ<br>РАЗВИТИЯ<br>РЕСПУБЛИКИ КАРЕЛИЯ</p>
+          </a>
+
+          <a href="http://economy.karelia.ru/" class="w3-button w3-third">
+            <img src="img/logo3.png" alt="sdf" class="useful_link_img">
+            <p class="w3-text-dark-grey">МИНИСТЕРСТВО ЭКОНОМИЧЕСКОГО<br>РАЗВИТИЯ И ПРОМЫШЛЕННОСТИ<br>РЕСПУБЛИКИ КАРЕЛИЯ</p>
+          </a>
+        </div>
+      </div>
+
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </footer>
+
+    <!-- Накладываемый слой: краткое описание услуги -->
+
+    <div id="overlay">
+      <article class="overlay_card">
+        <button class="w3-button overlay_header " onclick="off()"> 
+          <i class='fa fa-arrow-circle-left w3-large overlay_header_icon'></i>Вернуться к выбору услуг
+        </button> 
+
+        <section class="overlay_name">
+          <h2 class="overlay_h2">Консультация по мерам финансовой поддержки</h2>
+          <p class="w3-text-grey"><i class='fa fa-calculator w3-xlarge overlay_name_icon w3-text-teal'></i>Финансы</p>
+          <a class="w3-text-blue" style="border-bottom: 1px dashed blue">Перейти к полному описанию <i class="fa fa-arrow-right w3-small w3-padding-16"></i></a>
+        </section>
+
+        <button class="w3-button overlay_app_button">Оформить заявку</button>
+
+        <section class="overlay_section_description">
+
+          <div class="aside_left">
+              <!-- <h3 class="overlay_h3">Описание услуги</h3> -->
+
+              <div class="desc_butt">
+              <button id="mo" onclick="show_description('required_1')" class="w3-button w3-block w3-left-align butt-green">
+                  Муниципальное образование <i class="fa fa-caret-down w3-large"></i></button>
+                  
+                  <div id="required_1" class="w3-hide w3-container">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+              
+                  <button id="cat_pol" onclick="show_description('required_2')" class="w3-button w3-block w3-left-align butt-green">
+                      Категория получателя <i class="fa fa-caret-down w3-large"></i></button>
+                      
+                      <div id="required_2" class="w3-hide w3-container">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+
+                  <button id="opf" onclick="show_description('required_3')" class="w3-button w3-block w3-left-align butt-green">
+                      Организационно-правовая форма <i class="fa fa-caret-down w3-large"></i></button>
+                      
+                      <div id="required_3" class="w3-hide w3-container">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+
+                  <button id="period" onclick="show_description('required_4')" class="w3-button w3-block w3-left-align butt-green">
+                      Срок существования <i class="fa fa-caret-down w3-large"></i></button>
+                      
+                      <div id="required_4" class="w3-hide w3-container">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+
+                  <button id="category" onclick="show_description('required_6')" class="w3-button w3-block w3-left-align butt-green">
+                      Категория субъекта МСП <i class="fa fa-caret-down w3-large"></i></button>
+                      
+                      <div id="required_6" class="w3-hide w3-container">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+
+                  <button id="money" onclick="show_description('required_7')" class="w3-button w3-block w3-left-align butt-green">
+                      Годовой оборот, млн. руб. <i class="fa fa-caret-down w3-large"></i></button>
+                      
+                      <div id="required_7" class="w3-hide w3-container">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+
+                  <button id="cost" onclick="show_description('required_8')" class="w3-button w3-block w3-left-align butt-green">
+                      Стоимость <i class="fa fa-caret-down w3-large"></i></button>
+                      
+                      <div id="required_8" class="w3-hide w3-container">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+
+                  <button id="main" onclick="show_description('required_9')" class="w3-button w3-block w3-left-align butt-green">
+                      Основные условия <i class="fa fa-caret-down w3-large"></i></button>
+                      
+                      <div id="required_9" class="w3-hide w3-container">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+
+                  <button id="max" onclick="show_description('required_10')" class="w3-button w3-block w3-left-align butt-green">
+                      Максимальный размер <i class="fa fa-caret-down w3-large"></i></button>
+                      
+                      <div id="required_10" class="w3-hide w3-container">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+
+                  <button id="datestart" onclick="show_description('required_11')" class="w3-button w3-block w3-left-align butt-green">
+                      Дата начала поддержки / приема документов <i class="fa fa-caret-down w3-large"></i></button>
+                      
+                      <div id="required_11" class="w3-hide w3-container">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+
+                  <button id="dateend" onclick="show_description('required_12')" class="w3-button w3-block w3-left-align butt-green">
+                      Дата окончания приема документов <i class="fa fa-caret-down w3-large"></i></button>
+                      
+                      <div id="required_12" class="w3-hide w3-container">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+
+                  
+              </div>
+
+          </div>
+
+          <div class="aside-right">
+            <ul class="w3-ul w3-hoverable">
+              <li class="blue">Требования</li>
+              <a href="#mo" onclick="show_description('required_1')"><li>Муниципальное образование</li></a>
+              <a href="#cat_pol" onclick="show_description('required_2')"><li>Категория получателя</li></a>
+              <a href="#opf" onclick="show_description('required_3')"><li>Организационно-правовая форма</li></a>
+              <a href="#period" onclick="show_description('required_4')"><li>Срок существования</li></a>
+              <a href="#category" onclick="show_description('required_6')"><li>Категория субъекта МСП</li></a>
+              <a href="#money" onclick="show_description('required_7')"><li>Годовой оборот, млн. руб.</li></a>
+            </ul>
+            <ul class="w3-ul w3-hoverable w3-margin-top">
+                <li class="blue">Условия</li>
+                <a href="#cost" onclick="show_description('required_8')"><li>Стоимость</li></a>
+                <a href="#main" onclick="show_description('required_9')"><li>Основные условия</li></a>
+                <a href="#max" onclick="show_description('required_10')"><li>Максимальный размер</li></a>
+                <a href="#datestart" onclick="show_description('required_11')"><li>Дата начала поддержки / приема документов</li></a>
+                <a href="#dateend" onclick="show_description('required_12')"><li>Дата окончания приема документов</li></a>
+            </ul>
+            <ul class="w3-ul w3-hoverable w3-margin-top">
+                <li class="blue">Документы</li>
+                <li>Перечень</li>
+                <li>Адрес для подачи</li>
+                <li>Срок рассмотрения</li>
+                <li>Организация</li>
+                <li>Контактное лицо</li>
+            </ul>
+            <ul class="w3-ul w3-hoverable w3-margin-top">
+                <li class="blue">Результат</li>
+                <li>Результирующий документ </li>
+                <li>Способ получения результата</li>
+            </ul>
+          </div>
+        </section>
+
+      </article> 
+    </div> 
+
+    <script src="js/registry.js"></script>
+
+  </body>
+</html>
