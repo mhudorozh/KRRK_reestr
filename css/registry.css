@@ -216,3 +216,9 @@ h5 {
     padding-bottom: 10px;
     font-weight: 600;
 }
+
+.nav_button {
+    display: block;
+    margin: 0 auto;
+    padding: 5px 16px;
+}
