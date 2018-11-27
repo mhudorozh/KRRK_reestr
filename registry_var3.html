@@ -5,7 +5,6 @@
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Информационно-аналитическая система «Поддержка предпринимательства» АО «Корпорация развития Республики Карелия»</title>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Подключение стилей для страницы из фала registry.css -->
     <link rel="stylesheet" href="css/registry.css">
@@ -82,14 +81,17 @@
                   <button class="w3-button w3-black filter_button" title="More"> Категория получателя <span class="w3-badge w3-green filter_badge" id="test">0</span> <i class="w3-large fa fa-caret-down"></i></button>     
                   <div class="w3-dropdown-content w3-bar-block w3-card-4" id="category_div">
                     <input class="w3-input w3-padding" type="text" placeholder="Search.." id="categoty_input" onkeyup="filter_search('category_div', 'categoty_input')">
-                    
+                
+                    <!-- The element label/input must not appear as a descendant of the a element -->
                     <a class="w3-bar-item w3-button"><input class="w3-check" type="checkbox" onchange='handleChange(this);' id="about"><label for="about">About</label></a>
                     <a class="w3-bar-item w3-button"><input class="w3-check" type="checkbox" onchange='handleChange(this);' id="base"><label for="base">Base</label></a>
                     <a class="w3-bar-item w3-button"><input class="w3-check" type="checkbox" onchange='handleChange(this);' id="blog"><label for="blog">Blog</label></a>
                     <a class="w3-bar-item w3-button"><input class="w3-check" type="checkbox" onchange='handleChange(this);' id="contact"><label for="contact">Contact</label></a>
                     <a class="w3-bar-item w3-button"><input class="w3-check" type="checkbox" onchange='handleChange(this);' id="support"><label for="support">Support</label></a>
                     <a class="w3-bar-item w3-button"><input class="w3-check" type="checkbox" onchange='handleChange(this);' id="tools"><label for="tools">Tools</label></a>
-                </div>	
+                    <!-- end -->
+
+                  </div>	
                 </div>
 
               <!-- Выпадающий список "Вид деятельности" -->
@@ -358,7 +360,7 @@
     <!-- Накладываемый слой: краткое описание услуги -->
 
     <div id="overlay">
-      <article class="overlay_card">
+      <div class="overlay_card">
         <button class="w3-button overlay_header " onclick="off()"> 
           <i class='fa fa-arrow-circle-left w3-large overlay_header_icon'></i>Вернуться к выбору услуг
         </button> 
@@ -369,7 +371,7 @@
           <a class="w3-text-blue" style="border-bottom: 1px dashed blue">Перейти к полному описанию <i class="fa fa-arrow-right w3-small w3-padding-16"></i></a>
         </section>
 
-        <button class="w3-button overlay_app_button" onclick='window.location.hash="form";''>Оформить заявку</button>
+        <button class="w3-button overlay_app_button" onclick='window.location.hash="form";'>Оформить заявку</button>
 
         <section class="overlay_section_description">
           <div class="w3-container">
@@ -453,12 +455,6 @@
             </div>
             <hr>
 
-            <div class="description" id="main">
-              <h5>Основные условия</h5>
-              <p>Не установлено</p>
-            </div>
-            <hr>
-
             <div class="description" id="datestart">
               <h5>Дата начала поддержки / приема документов</h5>
               <p>Не установлено</p>
@@ -505,13 +501,13 @@
             </div>
 
             <div id="Result" class="w3-container city" style="display:none">
-              <div class="description" id="list">
+              <div class="description" id="resdoc">
                 <h5>Результирующий документ</h5>
                 <p>Не установлено</p>
               </div>
               <hr>
   
-              <div class="description" id="organization">
+              <div class="description" id="varres">
                 <h5>Способ получения результата</h5>
                 <p>Не установлено</p>
               </div>
@@ -573,7 +569,7 @@
           </div>
         </section>
 
-      </article> 
+      </div> 
     </div> 
 
     <script src="js/registry.js"></script>
