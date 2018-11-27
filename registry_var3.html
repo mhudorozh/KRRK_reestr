@@ -369,139 +369,208 @@
           <a class="w3-text-blue" style="border-bottom: 1px dashed blue">Перейти к полному описанию <i class="fa fa-arrow-right w3-small w3-padding-16"></i></a>
         </section>
 
-        <button class="w3-button overlay_app_button">Оформить заявку</button>
+        <button class="w3-button overlay_app_button" onclick='window.location.hash="form";''>Оформить заявку</button>
 
         <section class="overlay_section_description">
-          
-          <div class="nav_button">
-            <button style="display: none" class="w3-button w3-border">Требования</button>
-            <div class="w3-dropdown-hover">
-                <button class="w3-button w3-border">Требования</button>     
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                  <a href="#" class="w3-bar-item w3-button">Муниципальное образование</a>
-                  <a href="#" class="w3-bar-item w3-button">Категория получателя</a>
-                  <a href="#" class="w3-bar-item w3-button">Организационно-правовая форма</a>
-                  <a href="#" class="w3-bar-item w3-button">Срок существования</a>
-                  <a href="#" class="w3-bar-item w3-button">Категория субъекта МСП</a>
-                  <a href="#" class="w3-bar-item w3-button">Годовой оборот, млн. руб.</a>
-                </div>
-              </div>
-            <div class="w3-dropdown-hover">
-                <button class="w3-button w3-border">Условия</button>     
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                  <a href="#" class="w3-bar-item w3-button">Стоимость</a>
-                  <a href="#" class="w3-bar-item w3-button">Основные условия</a>
-                  <a href="#" class="w3-bar-item w3-button">Максимальный размер</a>
-                  <a href="#" class="w3-bar-item w3-button">Дата начала поддержки / приема документов</a>
-                  <a href="#" class="w3-bar-item w3-button">Дата окончания приема документов</a>
-                </div>
-              </div>
-            <div class="w3-dropdown-hover">
-                <button class="w3-button w3-border">Документы</button>     
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                  <a href="#" class="w3-bar-item w3-button">Перечень</a>
-                  <a href="#" class="w3-bar-item w3-button">Адрес для подачи</a>
-                  <a href="#" class="w3-bar-item w3-button">Срок рассмотрения</a>
-                  <a href="#" class="w3-bar-item w3-button">Организация</a>
-                  <a href="#" class="w3-bar-item w3-button">Контактное лицо</a>
-                </div>
-              </div>
-            <div class="w3-dropdown-hover">
-                <button class="w3-button w3-border">Результат</button>     
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                  <a href="#" class="w3-bar-item w3-button">Результирующий документ</a>
-                  <a href="#" class="w3-bar-item w3-button">Способ получения результата</a>
-                </div>
-              </div>
-          </div>
-          
-          <div class="aside_left">
+          <div class="w3-container">
 
-            <hr>
-            <div class="description" id="mo">
-              <h5>Муниципальное образование</h5>
+            <div class="w3-bar w3-white">
+              <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event, 'Requirement');">Требования</button>
+              <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Conditions');">Условия</button>
+              <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Documents');">Документы</button>
+              <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Result');">Результат</button>
+            </div>
+          
+            <div id="Requirement" class="w3-container city">
+            
+              <div class="description" id="mo">
+                <h5>Муниципальное образование</h5>
+                <p>Не установлено</p>
+              </div>
+              <hr>
+
+              <div class="description" id="cat_pol"> 
+                <h5>Категория получателя</h5>
+                <p>Все субъекты МСП</p>
+                <p>Субъект МСП (организованный с участием студентов, аспирантов и выпускников учебных заведений)</p>
+                <p>Субъект аграрного туризма, предоставляющий комплекс туристско-экскурсионных услуг</p>
+                <p>Крестьянское (фермерское) хозяйство</p>
+                <p>Сельскохозяйственный потребительский кооператив</p>
+                <p>Крестьянское (фермерское) хозяйство, прошедшее отбор комиссии по отбору семейных животноводческих ферм крестьянских (фермерских) хозяйств</p>
+                <p>Иной хозяйствующий субъект (в том числе сельскохозяйственный товаропроизводитель)</p>
+                <p>Граждане ведущие личное подсобное хозяйство</p>
+                <p>Начинающее крестьянское (фермерское) хозяйство, прошедшее отбор конкурсной комиссии по отбору начинающих фермеров</p>
+                <p>Физическое лицо</p>
+                <p>Физическое лицо (планирующее открыть МСП)</p>
+                <p>Физическое лицо (студенты, школьники, аспиранты)</p>
+                <p>Инновационная компания</p>
+              </div>
+              <hr>
+            
+              <div class="description" id="opf">
+                <h5>Организационно-правовая форма</h5>
+                <p>Организация</p>
+                <p>Индивидуальный предприниматель</p>
+                <p>Физическое лицо</p>
+              </div>
+              <hr>
+
+              <div class="description" id="period">
+                <h5 >Срок существования</h5>
+                <p>Без ограничений</p>
+              </div>
+              <hr>
+
+              <div class="description" id="category">
+                <h5>Категория субъекта МСП</h5>
+                <p>Не установлено</p>
+              </div>
+              <hr>
+
+              <div class="description" id="money">
+                <h5>Годовой оборот, млн. руб.</h5>
+                <p>Не установлено</p>
+              </div>
+
+            </div>
+
+            <div id="Conditions" class="w3-container city" style="display:none">
+              <div class="description" id="cost">
+                <h5>Стоимость</h5>
+                <p>Не установлено</p>
+              </div>
+              <hr>
+
+            <div class="description" id="main">
+              <h5>Основные условия</h5>
               <p>Не установлено</p>
             </div>
             <hr>
 
-            <div class="description" id="cat_pol"> 
-              <h5>Категория получателя</h5>
-              <p>Все субъекты МСП</p>
-              <p>Субъект МСП (организованный с участием студентов, аспирантов и выпускников учебных заведений)</p>
-              <p>Субъект аграрного туризма, предоставляющий комплекс туристско-экскурсионных услуг</p>
-              <p>Крестьянское (фермерское) хозяйство</p>
-              <p>Сельскохозяйственный потребительский кооператив</p>
-              <p>Крестьянское (фермерское) хозяйство, прошедшее отбор комиссии по отбору семейных животноводческих ферм крестьянских (фермерских) хозяйств</p>
-              <p>Иной хозяйствующий субъект (в том числе сельскохозяйственный товаропроизводитель)</p>
-              <p>Граждане ведущие личное подсобное хозяйство</p>
-              <p>Начинающее крестьянское (фермерское) хозяйство, прошедшее отбор конкурсной комиссии по отбору начинающих фермеров</p>
-              <p>Физическое лицо</p>
-              <p>Физическое лицо (планирующее открыть МСП)</p>
-              <p>Физическое лицо (студенты, школьники, аспиранты)</p>
-              <p>Инновационная компания</p>
-            </div>
-            <hr>
-            
-            <div class="description" id="opf">
-              <h5>Организационно-правовая форма</h5>
-              <p>Организация</p>
-              <p>Индивидуальный предприниматель</p>
-              <p>Физическое лицо</p>
+            <div class="description" id="max">
+              <h5>Максимальный размер</h5>
+              <p>Не установлено</p>
             </div>
             <hr>
 
-            <div class="description" id="period">
-                <h5 >Срок существования</h5>
-                <p>Без ограничений</p>
-              </div>
+            <div class="description" id="main">
+              <h5>Основные условия</h5>
+              <p>Не установлено</p>
+            </div>
             <hr>
 
-            <div class="description" id="category">
-                <h5>Категория субъекта МСП</h5>
+            <div class="description" id="datestart">
+              <h5>Дата начала поддержки / приема документов</h5>
+              <p>Не установлено</p>
+            </div>
+            <hr>
+
+            <div class="description" id="dateend">
+              <h5>Дата окончания приема документов</h5>
+              <p>Не установлено</p>
+            </div>
+
+            </div>
+
+            <div id="Documents" class="w3-container city" style="display:none">
+              <div class="description" id="list">
+                <h5>Перечень</h5>
                 <p>Не установлено</p>
               </div>
-            <hr>
-
-            <div class="description" id="money">
-                <h5>Годовой оборот, млн. руб.</h5>
+              <hr>
+  
+              <div class="description" id="adress">
+                <h5>Адрес для подачи </h5>
                 <p>Не установлено</p>
               </div>
-            <hr>
+              <hr>
+  
+              <div class="description" id="term">
+                <h5>Срок рассмотрения</h5>
+                <p>Не установлено</p>
+              </div>
+              <hr>
+  
+              <div class="description" id="organization">
+                <h5>Организация</h5>
+                <p>Не установлено</p>
+              </div>
+              <hr>
+  
+              <div class="description" id="person">
+                <h5>Контактное лицо</h5>
+                <p>Не установлено</p>
+              </div>
+  
+            </div>
 
+            <div id="Result" class="w3-container city" style="display:none">
+              <div class="description" id="list">
+                <h5>Результирующий документ</h5>
+                <p>Не установлено</p>
+              </div>
+              <hr>
+  
+              <div class="description" id="organization">
+                <h5>Способ получения результата</h5>
+                <p>Не установлено</p>
+              </div>
+  
+            </div>
           </div>
+        </section>
 
-          <!-- <div class="aside-right">
-            <ul class="w3-ul w3-hoverable">
-              <li class="blue">Требования</li>
-              <a href="#mo"><li>Муниципальное образование</li></a>
-              <a href="#cat_pol"><li>Категория получателя</li></a>
-              <a href="#opf"><li>Организационно-правовая форма</li></a>
-              <a href="#period"><li>Срок существования</li></a>
-              <a href="#category"><li>Категория субъекта МСП</li></a>
-              <a href="#money"><li>Годовой оборот, млн. руб.</li></a>
-            </ul>
-            <ul class="w3-ul w3-hoverable w3-margin-top">
-                <li class="blue">Условия</li>
-                <li>Стоимость</li>
-                <li>Основные условия</li>
-                <li>Максимальный размер</li>
-                <li>Дата начала поддержки / приема документов</li>
-                <li>Дата окончания приема документов</li>
-            </ul>
-            <ul class="w3-ul w3-hoverable w3-margin-top">
-                <li class="blue">Документы</li>
-                <li>Перечень</li>
-                <li>Адрес для подачи</li>
-                <li>Срок рассмотрения</li>
-                <li>Организация</li>
-                <li>Контактное лицо</li>
-            </ul>
-            <ul class="w3-ul w3-hoverable w3-margin-top">
-                <li class="blue">Результат</li>
-                <li>Результирующий документ </li>
-                <li>Способ получения результата</li>
-            </ul>
-          </div> -->
+        <section class="section_form">
+          <div class="w3-card-4 overlay_section_form" id="form">
+            <div class="w3-container form_head">
+              <h4>Оформить заявку</h4>
+            </div>
+
+            <form class="w3-container">
+              <p>
+                <label>Фамилия Имя Отчество</label>
+                <input class="w3-input" type="text" required>
+              </p>
+
+              <p> 
+                <label>Электронная почта</label>    
+                <input class="w3-input" type="email">
+              </p>
+
+              <p> 
+                <label>Телефон</label>    
+                <input class="w3-input" type="tel">
+              </p>
+
+              <p> 
+                <label>Адрес</label>    
+                <input class="w3-input" type="tel">
+              </p>
+
+              <p> 
+                <label>Организация</label>    
+                <input class="w3-input" type="tel">
+              </p>
+
+              <p> 
+                <label>Должность</label>    
+                <input class="w3-input" type="tel">
+              </p>
+
+              <p> 
+                <label>Комментарий</label>    
+                <textarea class="w3-input"></textarea>
+              </p>
+
+              <p> 
+                <label>Дополнительная информация</label>    
+                <input class="w3-input" type="file">
+              </p>
+              <p>   
+                <input class="w3-btn btn" type="submit" value="Оформить">
+              </p>  
+            </form>
+          </div>
         </section>
 
       </article> 
